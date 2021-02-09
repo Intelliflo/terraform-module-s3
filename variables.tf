@@ -40,6 +40,12 @@ variable "policy" {
   default     = null
 }
 
+variable "block_public_access" {
+  description = "(Optional, Default: true) Enables block_public_acls, block_public_policy, ignore_public_acls and restrict_public_buckets (Warning: setting to false will trigger Security Hub)"
+  type        = bool
+  default     = true
+}
+
 variable "tags" {
   description = "(Optional) A mapping of tags to assign to the bucket."
   type        = map(string)

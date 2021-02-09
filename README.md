@@ -85,6 +85,7 @@ module "s3_bucket" {
 | acl | (Optional) The canned ACL to apply. Defaults to 'private'. | string | `"private"` | no |
 | attach\_elb\_log\_delivery\_policy | Controls if S3 bucket should have ELB log delivery policy attached | bool | `"false"` | no |
 | attach\_policy | Controls if S3 bucket should have bucket policy attached (set to `true` to use value of `policy` as bucket policy) | bool | `"false"` | no |
+| block\_public\_access | (Optional, Default: true) Enables block_public_acls, block_public_policy, ignore_public_acls and restrict_public_buckets (Warning: setting to false will [fail Security Hub controls](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp-controls.html#fsbp-s3-1) | bool | `"true"` | no
 | bucket | (Optional, Forces new resource) The name of the bucket. If omitted, Terraform will assign a random, unique name. | string | `"null"` | no |
 | bucket\_prefix | (Optional, Forces new resource) Creates a unique bucket name beginning with the specified prefix. Conflicts with bucket. | string | `"null"` | no |
 | cors\_rule | Map containing a rule of Cross-Origin Resource Sharing. | any | `{}` | no |
